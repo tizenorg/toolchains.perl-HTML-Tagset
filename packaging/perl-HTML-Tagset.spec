@@ -7,6 +7,7 @@ Group:          Development/Libraries
 License:        GPL+ or Artistic
 URL:            http://search.cpan.org/dist/HTML-Tagset/
 Source0:        http://search.cpan.org/CPAN/authors/id/P/PE/PETDANCE/HTML-Tagset-%{version}.tar.gz
+Source1001: packaging/perl-HTML-Tagset.manifest 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildArch:      noarch
@@ -22,6 +23,7 @@ HTML parsing operations, such as tag and entity names.
 %setup -q -n HTML-Tagset-%{version}
 
 %build
+cp %{SOURCE1001} .
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 make %{?_smp_mflags}
 
@@ -40,6 +42,7 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %files
+%manifest perl-HTML-Tagset.manifest
 %defattr(-,root,root,-)
 %doc Changes README
 %{perl_vendorlib}/HTML/*
