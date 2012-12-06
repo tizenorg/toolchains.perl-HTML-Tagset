@@ -7,7 +7,7 @@ Group:          Development/Libraries
 License:        GPL+ or Artistic
 URL:            http://search.cpan.org/dist/HTML-Tagset/
 Source0:        %{name}-%{version}.tar.gz
-Source1001: packaging/perl-HTML-Tagset.manifest 
+Source1001:     packaging/perl-HTML-Tagset.manifest 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildArch:      noarch
@@ -46,6 +46,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %doc Changes README
 %{perl_vendorlib}/HTML/*
-%doc %{_mandir}/man3/HTML::Tagset.3pm*
+#%doc %{_mandir}/man3/HTML::Tagset.3pm*
 
 
