@@ -46,6 +46,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %doc Changes README
 %{perl_vendorlib}/HTML/*
-#%doc %{_mandir}/man3/HTML::Tagset.3pm*
+%doc %{_mandir}/man3/HTML::Tagset.3pm*
 
 
