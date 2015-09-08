@@ -6,8 +6,7 @@ Summary:        HTML::Tagset - data tables useful in parsing HTML
 Group:          Development/Libraries
 License:        GPL+ or Artistic
 URL:            http://search.cpan.org/dist/HTML-Tagset/
-Source0:        %{name}-%{version}.tar.gz
-Source1001:     packaging/perl-HTML-Tagset.manifest 
+Source0:        http://search.cpan.org/CPAN/authors/id/P/PE/PETDANCE/HTML-Tagset-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildArch:      noarch
@@ -20,10 +19,9 @@ HTML parsing operations, such as tag and entity names.
 
 
 %prep
-%setup -q
+%setup -q -n HTML-Tagset-%{version}
 
 %build
-cp %{SOURCE1001} .
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 make %{?_smp_mflags}
 
@@ -42,10 +40,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %files
-%manifest perl-HTML-Tagset.manifest
 %defattr(-,root,root,-)
 %doc Changes README
 %{perl_vendorlib}/HTML/*
-#%doc %{_mandir}/man3/HTML::Tagset.3pm*
+%doc %{_mandir}/man3/HTML::Tagset.3pm*
 
 
